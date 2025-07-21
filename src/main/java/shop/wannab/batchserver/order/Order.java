@@ -54,8 +54,9 @@ public class Order {
     @Column(name = "shipping_fee")
     private int shippingFee;
 
-    @Column(name = "total_wrapping_price")
-    private int totalWrappingPrice;
+    @NotNull
+    @Column(name = "total_paving_price")
+    private int totalPavingPrice;
 
     @Column(name = "user_id")
     private Long userId;
