@@ -10,10 +10,10 @@ import lombok.NoArgsConstructor;
 public class UserSpend {
 
     private Long userId;
-    private int totalBookPriceSum;
-    private int totalDiscountAmountSum;
+    private Long totalBookPriceSum;
+    private Long totalDiscountAmountSum;
 
-    public int getActualSpent() {
+    public Long getActualSpent() {
         return totalBookPriceSum - totalDiscountAmountSum;
     }
 
