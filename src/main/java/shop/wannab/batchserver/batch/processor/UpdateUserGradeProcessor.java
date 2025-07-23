@@ -55,7 +55,7 @@ public class UpdateUserGradeProcessor implements ItemProcessor<UserSpend, User> 
         }
     }
 
-    public Long determineNewGrade(int actualSpent) {
+    public Long determineNewGrade(long actualSpent) {
         if (actualSpent < 100000) {
             return standardUserGrade.getGradeId();
         } else if (actualSpent < 200000) {

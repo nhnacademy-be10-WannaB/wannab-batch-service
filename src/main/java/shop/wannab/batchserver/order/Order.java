@@ -60,7 +60,6 @@ public class Order {
     @Column(name = "user_id")
     private Long userId;
 
-    @NotNull
     @Column(name = "recipient_name")
     private String recipientName;
 
