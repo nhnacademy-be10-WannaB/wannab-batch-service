@@ -40,9 +40,12 @@ public class BatchConfig {
                         sum(o.totalDiscountAmount)
                     )
                     from Order o
-                    where o.orderAt >= :startDate
-                      and (o.orderStatus = shop.wannab.batchserver.order.OrderStatus.COMPLETED
-                           or o.orderStatus = shop.wannab.batchserver.order.OrderStatus.SHIPPING)
+                    where o.userId is not null
+                        and o.orderAt >= :startDate
+                        and o.orderStatus in (
+                            shop.wannab.batchserver.order.OrderStatus.COMPLETED,
+                            shop.wannab.batchserver.order.OrderStatus.SHIPPING
+                        )
                     group by o.userId
                     order by o.userId
                 """)
