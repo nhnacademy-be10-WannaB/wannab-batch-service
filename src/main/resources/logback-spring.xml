@@ -3,7 +3,7 @@
     <include resource="org/springframework/boot/logging/logback/console-appender.xml"/>
 
     <property name="LOG_PATH" value="/app/logs"/>
-    <property name="APP_NAME" value="user-service"/>
+    <property name="APP_NAME" value="batch-service"/>
     <property name="VERSION" value="${spring.profiles.active:-unknown}"/>
 
     <appender name="ROLLING_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
@@ -19,7 +19,6 @@
 
     <springProfile name="v1">
         <root level="INFO">
-            <appender-ref ref="CONSOLE"/>
             <appender-ref ref="ROLLING_FILE"/>
         </root>
     </springProfile>
